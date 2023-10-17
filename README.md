@@ -1,8 +1,8 @@
 # SCFC
-This repository provides pytorch implementation of the following paper:
 <div align="center">
     <img src="./assets/overview.png">
 </div>
+This repository provides pytorch implementation of the following paper:
 
 >**Structural and functional connectome relationships in early childhood**
 
