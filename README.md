@@ -11,10 +11,10 @@ This repository provides pytorch implementation of the following paper:
 There is strong evidence that the functional connectome is highly related to the white matter connectome in older children and adults, though little is known about structure-function relationships in early childhood. We investigated the development of cortical structure-function coupling in children longitudinally scanned at 1, 2, 4, and 6 years of age (N = 360) and in a comparison sample of adults (N = 89). We also applied a novel graph convolutional neural network-based deep learning model with a new loss function to better capture inter-subject heterogeneity and predict an individual’s functional connectivity from the corresponding structural connectivity. We found regional patterns of structure-function coupling in early childhood that were consistent with adult patterns. In addition, our deep learning model improved the prediction of individual functional connectivity from its structural counterpart compared to existing models.
 
 ## Usage
+```
+python3 run_SCtoFC.py
+```
 
-### Train
-
-### Test
 
 ## Architrecture
 

@@ -99,11 +99,24 @@ if __name__ == "__main__":
 	# edge_FC = np.array(edge_FC)
 
 	## define SC and FC, subjects ids, scanners, ages
-	edge_SC = np.random.randn(40, args.lr_dim, args.lr_dim)
-	edge_FC = np.random.randn(40, args.lr_dim, args.lr_dim)
-	subjects_ids = np.arange(40)
-	scanners = 
-
+	# the following is just for simulation
+	n_subj = 400
+	edge_SC = np.random.randn(n_subj, args.lr_dim, args.lr_dim)
+	edge_FC = np.random.randn(n_subj, args.lr_dim, args.lr_dim)
+	# subjects_ids = np.arange(n_subj)
+	subjects_ids = []
+	for idx in range(n_subj):
+		if idx < int(n_subj/4):
+			subjects_ids.append(str(idx)+'-1year')
+		elif idx < int(2*n_subj/4):
+			subjects_ids.append(str(idx)+'-2year')
+		elif idx < int(3*n_subj/4):
+			subjects_ids.append(str(idx)+'-4year')
+		else:
+			subjects_ids.append(str(idx)+'-6year')
+	mask = np.random.binomial(1, 0.5, n_subj)
+	scanners = ['A' if mask[idx]==1 else 'T' for idx in range(n_subj) ]
+	######
 
 	# rescaling individual level
 	for s in range(edge_SC.shape[0]):
@@ -132,9 +145,9 @@ if __name__ == "__main__":
 	filedir = os.path.join(args.log_path, args.log_name)
 	if not os.path.exists(os.path.join(args.log_path, args.log_name)):
 		os.makedirs(os.path.join(args.log_path, args.log_name))
-	filename = filedir +'/'+'meanFC.txt'	
-	with open(filename, "w") as log_file:
-		np.savetxt(log_file, mean_adj, fmt='%.7f')
+	# filename = filedir +'/'+'meanFC.txt'	
+	# with open(filename, "w") as log_file:
+	# 	np.savetxt(log_file, mean_adj, fmt='%.7f')
 
 
 	
